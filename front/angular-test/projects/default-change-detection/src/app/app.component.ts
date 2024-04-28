@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HighlightDirective } from '@ui';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss',
   changeDetection: ChangeDetectionStrategy.Default,
   standalone: true,
+  hostDirectives: [HighlightDirective],
   imports: [RouterOutlet],
 })
 export class AppComponent {

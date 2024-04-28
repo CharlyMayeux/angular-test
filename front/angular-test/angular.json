@@ -161,5 +161,8 @@
     "@schematics/angular:pipe": {
       "skipTests": true
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

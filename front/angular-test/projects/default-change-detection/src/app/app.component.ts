@@ -1,5 +1,8 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+import{MatButtonModule} from '@angular/material/button';
+
 import { HighlightDirective } from '@ui';
 
 @Component({
@@ -9,7 +12,15 @@ import { HighlightDirective } from '@ui';
   changeDetection: ChangeDetectionStrategy.Default,
   standalone: true,
   hostDirectives: [HighlightDirective],
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MatButtonModule],
 })
 export class AppComponent {
+  readonly #highlight = inject(HighlightDirective);
+  changeName() {
+    console.log('Angular');
+  }
+  
+  cd() {
+    this.#highlight.highlight();
+  }
 }

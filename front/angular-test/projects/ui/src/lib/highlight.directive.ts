@@ -13,7 +13,6 @@ export class HighlightDirective {
 
 
   ngOnInit() {
-    console.log('HighlightDirective initialized');
     this.#host.nativeElement.className =
       'block p-2 px-6  my-4 rounded-xl border-2 border-gray-300 bg-gray-200';
     this.#host.nativeElement.style.transition = 'all 300ms';
@@ -23,6 +22,7 @@ export class HighlightDirective {
     this.#host.nativeElement.classList.add('bg-fuchsia-300');
 
     this.#zone.runOutsideAngular(() => {
+      console.log('HighlightDirective#highlight');
       setTimeout(() => {
         this.#host.nativeElement.classList.remove('bg-fuchsia-300');
       }, 600);
